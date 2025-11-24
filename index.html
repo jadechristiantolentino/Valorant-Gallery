@@ -13,11 +13,12 @@
 
 <body class="bg-light">
 
-    ```
-    <div class="container-fluid px-4 py-3 d-flex align-items-center glass-container">
-        <img class="img" src="images/Valorant Logo.jpg" alt="Valorant logo" width="100">
-        <a class="btn btn-primary ms-auto" href="https://playvalorant.com/en-us/platform-selection/" role="button">Play
-            Now</a>
+    <div class="container-fluid px-3 py-2 glass-container">
+        <div class="d-flex align-items-center justify-content-between w-100">
+            <img class="img" src="images/Valorant Logo.jpg" alt="Valorant logo" width="100">
+            <h1 class="valorant-title position-absolute start-50 translate-middle-x m-0">VALORANT</h1>
+            <a class="btn btn-danger" href="https://playvalorant.com/en-us/platform-selection/" role="button">Play Now</a>
+        </div>
     </div>
 
     <div class="container mt-4">
@@ -28,7 +29,6 @@
     <script>
         var containerRow = document.getElementById("characters-row");
 
-
         for (var i = 0; i < characters.length; i++) {
             containerRow.innerHTML += `
         <div class="col-6 col-md-4 col-lg-3 text-center">
@@ -36,10 +36,11 @@
                 <div class="character-img position-relative overflow-hidden rounded-3">
                     <img src="` + characters[i].image + `" class="card-img">
                     <div class="character-overlay d-flex align-items-center text-center text-white">
-                        <p class="fs-5">` + characters[i].description + `</p>
                     </div>
                 </div>
-                <h4 class="character-name mt-2 text-white mb-2">` + characters[i].name + `</h4>
+                <h4 class="character-name mt-2 text-white mb-0">` + characters[i].name + `</h4>
+                <p class="character-role role-` + characters[i].role + `">` + characters[i].role + `</p>
+
             </div>
         </div>
         `;
